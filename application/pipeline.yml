@@ -77,9 +77,9 @@ jobs:
   - task: deploy
     file: ((deploy_dev_task))
     params:
-      CF_DEV_API: ((cf_dev_api))
-      CF_DEV_ORGANIZATION: ((cf_dev_organization))
-      CF_DEV_SPACE: ((cf_dev_space))
+      CF_API: ((cf_dev_api))
+      CF_ORGANIZATION: ((cf_dev_organization))
+      CF_SPACE: ((cf_dev_space))
       CF_HOSTNAME: ((cf_dev_hostname))
       CF_USERNAME: ((cf_dev_username))
       CF_PASSWORD: ((cf_dev_password))
