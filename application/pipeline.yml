@@ -71,9 +71,9 @@ jobs:
       params: {pre: rc}
       passed: [build]
     - get: pipelines
-      passed: [build]
+     # passed: [build]
     - get: app
-      passed: [build]
+     # passed: [build]
   - task: deploy
     file: ((deploy_dev_task))
     
