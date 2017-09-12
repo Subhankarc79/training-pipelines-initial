@@ -85,6 +85,7 @@ jobs:
       CF_PASSWORD: ((cf_dev_password))
       CF_DOMAIN: ((cf_dev_domain))
       CF_MANIFEST: ((cf_dev_manifest))
+      CF_APP_NAME: ((app_name))
     
 
 
