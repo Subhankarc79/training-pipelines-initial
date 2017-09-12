@@ -11,7 +11,9 @@ green_app_route="${green_app_route//./_}"
 
 cf login -a $CF_API -u $CF_USERNAME -p $CF_PASSWORD -o $CF_ORGANIZATION -s $CF_SPACE
 
-cf push $app_name -f app/${CF_MANIFEST} -p artifact/*.* -n $green_app_route
+#cf push $app_name -f app/${CF_MANIFEST} -p artifact/*.* -n $green_app_route
+
+cf push -f app/${CF_MANIFEST} -p artifact/*.* -n $green_app_route
 
 cf map-route $app_name $CF_DOMAIN --hostname $CF_HOSTNAME
 
@@ -49,6 +51,6 @@ for name in $app_names; do
       cf unmap-route   $name  $routes_url --hostname $CF_HOSTNAME
 
       cf delete $name -f
-      
+
     fi
 done
