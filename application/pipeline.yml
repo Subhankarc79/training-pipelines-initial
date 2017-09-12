@@ -73,7 +73,7 @@ jobs:
     - get: pipelines
       passed: [build]
     - get: app
-      
+      passed: [build]
   - task: deploy
     file: ((deploy_dev_task))
     
