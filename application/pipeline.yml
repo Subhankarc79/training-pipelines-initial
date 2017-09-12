@@ -4,7 +4,6 @@ resources:
 
 - name: app
   type: git
-  trigger: true
   source:
     uri: ((github_app_repo_uri))
     branch: ((github_app_repo_branch))
@@ -13,7 +12,6 @@ resources:
 
 - name: pipelines
   type: git
-  trigger: true
   source:
     uri: ((github_pipelines_repo_uri))
     branch: ((github_pipelines_repo_branch))
