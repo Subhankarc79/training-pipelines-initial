@@ -59,16 +59,24 @@ jobs:
       file: build/*
   - put: version
     params: {file: version/number}
-
-# - name: deploy-dev
-#   plan:
-#   - aggregate:
-#     - get: artifact
-#       passed: [build]
-#     - get: app
-#     - get: version
-#       passed: [build]
-#     - get: pipelines
+    
+- name: deploy-dev
+  serial_groups: [version]
+  plan:
+  - aggregate:
+    - get: artifact
+      trigger: true
+      passed: [build]
+    - get: version
+      params: {pre: rc}
+      passed: [build]
+    - get: pipelines
+      passed: [build]
+    - get: app
+      
+  - task: deploy
+    file: ((deploy_dev_task))
+    
 
 
 - name: major

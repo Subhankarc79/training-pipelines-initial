@@ -46,5 +46,6 @@ for name in $app_names; do
     if [ "$name" != "$app_name" ]
     then
       # TO DO: clean up blue
+      `cf unmap-route ` | $name | $routes_url
     fi
 done
