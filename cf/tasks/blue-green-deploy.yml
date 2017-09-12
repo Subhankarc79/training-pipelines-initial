@@ -10,7 +10,7 @@ inputs:
 - name: app
 - name: version
 - name: pipelines
-- name: build
+- name: artifact
 
 run:
   path: pipelines/cf/tasks/blue-green-deploy.sh
