@@ -1,0 +1,12 @@
+--- 
+Services: 
+  - sc_db_mysql_company
+applications: 
+  - 
+    name: company
+  - 
+    memory: 750M
+  - 
+    instance: 1
+  - 
+    buildpack: java_buildpack
