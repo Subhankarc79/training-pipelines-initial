@@ -56,7 +56,7 @@ for route in $routes_names; do
 
       echo "cf unmap-route "|   $name | " " | $domain_name |" --hostname " $route
 
-      --cf delete $name -f
+      #cf delete $name -f
 
     fi
 done
