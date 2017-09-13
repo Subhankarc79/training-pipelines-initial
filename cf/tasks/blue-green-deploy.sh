@@ -46,20 +46,24 @@ domain_names=`(cf curl /v2/spaces/8abcca26-9ace-4f3f-9cf5-58ce97872ea3/domains |
 
 echo "***BEFORE Clean Up*** $app_names *** $routes_names *** $domain_name"
 
-for route in $routes_names; do
+for name in $app_names; do
+  if [ "$name" != "$app_name" ]
+  then
+    for route in $routes_names; do
   for domain_name in $domain_names; do
-  for name in $app_names; do
-    if [ "$name" != "$app_name" ]
-    then
+
       # TO DO: clean up blue
 
       echo "***Inside Clean Up*** $name *** $domain_name *** $route"
 
       echo "cf unmap-route $name $domain_name  --hostname  $route"
+      
+      cf unmap-route $name $domain_name  --hostname  $route
 
-      #cf delete $name -f
+      cf delete $name -f
 
-    fi
+
 done
-done 
+done
+fi
 done
