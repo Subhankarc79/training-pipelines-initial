@@ -42,8 +42,9 @@ apps_url=`cf curl $routes_url | jq -r '.resources[].entity | select(.host=="'"$C
 # Fetch the app names assigned to the hostname
 app_names=`(cf curl $apps_url | jq -r '.resources[].entity.name')`
 routes_names=`(cf curl $routes_url | jq -r '.resources[].entity.host')`
+domain_name=`(cf curl /v2/spaces/8abcca26-9ace-4f3f-9cf5-58ce97872ea3/domains | jq -r '.resources[].entity.name')`
 
-echo "***BEFORE Clean Up*** $app_names *** $routes_names"
+echo "***BEFORE Clean Up*** $app_names *** $routes_names *** $domain_name"
 
 for route in $routes_names; do
   for name in $app_names; do
@@ -53,9 +54,9 @@ for route in $routes_names; do
 
       echo "***Inside Clean Up*** $name *** $route"
 
-      #cf unmap-route   $name  $routes_url --hostname $CF_HOSTNAME
+      cf unmap-route   $name  $domain_name --hostname $route
 
-      #cf delete $name -f
+      cf delete $name -f
 
     fi
 done
