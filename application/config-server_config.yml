@@ -1,7 +1,7 @@
 build_task: pipelines/gradle/tasks/gradle-assemble.yml # don't change
 deploy_dev_task: pipelines/cf/tasks/blue-green-deploy.yml # don't change
 
-app_name: config-server 
+app_name: Config-Server 
 jar_name: schatterjee-config-server # set this to '<first_initial><lastname>-company' ex: sgreenberg-company
 
 github_app_repo_uri: https://github.com/Subhankarc79/Config-Server.git # https url of your company app github fork.  ex: https://github.com/spgreenberg/company-initial.git
@@ -13,16 +13,16 @@ github_pipelines_repo_branch: master # don't change
 version_bucket: rscale-training-bucket # don't change
 version_bucket_region_name: us-west-2 # don't change
 
-version_key: schatterjee-config-server-version # set to '<first_initial><lastname>-company-version'.  ex: sgreenberg-company-version
+version_key: schatterjee-Config-Server-version # set to '<first_initial><lastname>-company-version'.  ex: sgreenberg-company-version
 initial_version: 0.0.1
 
-artifact_regexp: schatterjee-config-server-(.*).jar # set to '<first_initial><lastname>-company-(.*).jar'.  ex: sgreenberg-company-(.*).jar
+artifact_regexp: schatterjee-Config-Server-(.*).jar # set to '<first_initial><lastname>-company-(.*).jar'.  ex: sgreenberg-company-(.*).jar
 artifact_bucket: rscale-training-bucket # don't change
 artifact_bucket_region_name: us-west-2 # don't change
 
 cf_dev_api: https://api.run.pivotal.io # set to cf api endpoint
 cf_dev_organization: rscale-training-2 # set to your org
 cf_dev_space: subhankar.chatterjee@cgi.com # set to your space
-cf_dev_hostname: config-server-schatterjee # set to 'company-<first_initial><lastname>'. ex: company-sgreenberg
+cf_dev_hostname: Config-Server-schatterjee # set to 'company-<first_initial><lastname>'. ex: company-sgreenberg
 cf_dev_domain: cfapps.io # set to the apps domain for your CF
 cf_dev_manifest: dev-manifest.yml # set to the dev manifest path in your company app repository. ex: dev-manifest.yml
