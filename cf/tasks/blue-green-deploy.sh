@@ -51,9 +51,9 @@ for name in $app_names; do
 
       echo "***Inside Clean Up*** $name *** $routes_url"
 
-      cf unmap-route   $name  $routes_url --hostname $CF_HOSTNAME
+      #cf unmap-route   $name  $routes_url --hostname $CF_HOSTNAME
 
-      cf delete $name -f
+      #cf delete $name -f
 
     fi
 done
