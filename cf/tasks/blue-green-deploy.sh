@@ -59,3 +59,4 @@ for route in $routes_names; do
 
     fi
 done
+done
