@@ -52,7 +52,7 @@ for route in $routes_names; do
     then
       # TO DO: clean up blue
 
-      echo "***Inside Clean Up*** $name *** $route"
+      echo "***Inside Clean Up*** $name *** $domain_name *** $route"
 
       cf unmap-route   $name  $domain_name --hostname $route
 
