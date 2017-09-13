@@ -54,9 +54,9 @@ for route in $routes_names; do
 
       echo "***Inside Clean Up*** $name *** $domain_name *** $route"
 
-      cf unmap-route   $name  $domain_name --hostname $route
+      echo "cf unmap-route "|   $name | " " | $domain_name |" --hostname " $route
 
-      cf delete $name -f
+      --cf delete $name -f
 
     fi
 done
